@@ -24,6 +24,10 @@ user_detail = UserViewSet.as_view({
     'get': 'retrieve'
 })
 
+# Notice how we're creating multiple views from each ViewSet class,
+# by binding the http methods to the required action for each view.
+# Now that we've bound our resources into concrete views, we can register the views with the URL conf as usual.
+
 urlpatterns = format_suffix_patterns([
     path('', api_root),
     path('snippets/', snippet_list, name='snippet-list'),
